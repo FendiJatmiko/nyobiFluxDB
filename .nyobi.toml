@@ -1,0 +1,13 @@
+[app]
+name = "nyobi-influx"
+version = "0.0.1"
+host = "localhost"
+scheme = "http"
+port = 8001
+
+[database]
+host = "localhost"
+port = 8086
+name = "nyobi"
+sslmode = "disable"
+

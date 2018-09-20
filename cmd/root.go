@@ -38,5 +38,4 @@ var RootCmd = &cobra.Command{
 	}
 
 	initDB()
-	initCache()
 }
