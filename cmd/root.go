@@ -49,3 +49,16 @@ func Execute() {
 		os.Exit(1)
 	}
 }
+
+// Init prior to main
+
+func influxDBClient() client.Client {
+	c, err := client.NewHTTPClient(client.HTTPConfig{
+		Addr: "http://localhost:8086",
+	})
+	if err != nil {
+		log.Fatalln("Error: ", err)
+
+	}
+	return c
+}
