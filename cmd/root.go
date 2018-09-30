@@ -49,3 +49,16 @@ var RootCmd = &cobra.Command{
 		http.ListenAndServe(fmt.Sprintf(":%d", viper.GetInt("app.port")), r)
 	},
 }
+
+// Init prior to main
+
+func influxDBClient() client.Client {
+	c, err := client.NewHTTPClient(client.HTTPConfig{
+		Addr: "http://localhost:8086",
+	})
+	if err != nil {
+		log.Fatalln("Error: ", err)
+
+	}
+	return c
+}
